@@ -1,9 +1,9 @@
 # 🛡️ TotalControl
 ### **Open-Sourced NDR System**  
 <p align="center">
-  <!--<img src="https://i.ibb.co/zhQSfSJ1/Uninstall-X-Banner.png" alt="TotalControl Banner" style="border-radius: 12px;">-->
   <i>Banner coming soon!</i>
 </p>
+
 Provided by: [**CyberWatch**](https://github.com/Lamentomori)  
 _Secure your traffic, one packet at a time._
 
