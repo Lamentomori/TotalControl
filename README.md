@@ -1,7 +1,7 @@
 # 🛡️ TotalControl
 ### **Open-Sourced NDR System**  
 <p align="center">
-  <i>Banner coming soon!</i>
+  <img src="https://i.ibb.co/TBgyc0rx/Total-Control-Banner.png" alt="TotalControl Banner" style="border-radius: 12px;">
 </p>
 
 Provided by: [**CyberWatch**](https://github.com/Lamentomori)  
