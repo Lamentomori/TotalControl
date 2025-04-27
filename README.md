@@ -93,7 +93,7 @@ Cyber Security Major | Graphic Designer / Full Stack Developer
 [Discord]()
 [LinkedIn]()
 [Youtube]()
-### 📄 License
+## 📄 License
 **TotalControl** is licensed under the **GNU GPL v3.0**.  
 
 This means:
