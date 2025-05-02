@@ -18,9 +18,6 @@ _Secure your traffic, one packet at a time._
 
 ## 🧠 Features
 
-✅ **Behaviour Based Learning Mode**  
-→ Understands what’s normal and flags anomalies.
-
 ✅ **Real-Time IP Reputation Lookups**  
 → Instant VirusTotal scans - assess threats on the fly.
 
