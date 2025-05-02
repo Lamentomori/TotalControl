@@ -36,7 +36,7 @@ _Secure your traffic, one packet at a time._
 ## 📷 Sneak Peek
 
 <p align="center">
-  <i>Screenshots coming soon</i>
+  <image src="https://i.ibb.co/qLM2pHCK/Screenshot-2025-04-29-122630.png" style="border-radius: 12px;"></image>
 </p>
 
 ## ⚙️ Installation
