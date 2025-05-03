@@ -47,13 +47,13 @@ Step 3: Once finished reference your properties between XAML and your Figma Desi
 
 ---
 
-*I finished the Splashscreen that initializes the application* and applys the **Firewall Changes** we need via **PowerShell**.
+*I finished the Splashscreen that initializes the application* and applies the **Firewall Changes** we need via **PowerShell**.
 
 It's quite simple, the window is comprised of a Border, an image (CyberWatch Logo Banner), and 2 Text Labels.
 
 I used an Animation Class (like a library) to make Animating the objects easier.
 
-** I spent a total of 4 hours configuring the initial process **
+> I spent a total of 4 hours configuring the initial process
 
 I then went to bed to make sure I could continue this wonderful project in the morning 🛏️💤
 
@@ -115,3 +115,56 @@ I spent 1-2 hours researching data persistence in C# using Packages like `Micros
 I couldn't find a way that I could integrate into my UI Thread effectively, apparently in C# it's alot harder to asynchronously read/write in different scenarios. (I was also using .NET 9)
 
 # 4/30/2025 - 📉 Hospitalized by Data Persistence
+
+After spending hours running circles attempting to establish Data Persistence, I stressed myself out to the point of triggering my own anxiety.
+
+Kind of funny right? I have a strong vision for this project, and I really want this to be something that others will find usefull, I've had to mitigate-
+several problems throughout the development process (e.g Corrupting my `.csproj`, and other anomalies.)
+
+The combination of my turbulent home life and my failed attempts to establish this, led to a prompt ER visit- where I discovered that I was experiencing a "Panic Attack" due to un-managed stress. (I have an auto-immune disease that's labeled as Chronic Asthma, I've lived with this condition for a while: anything that reminds me of that sensation isn't very comforting..)
+
+I pushed myself where I should've given myself a break. I've been going at this non-stop for the past couple days.
+
+### ⚠️ IMPORTANT ⚠️
+
+*Mental Health* is _VERY IMPORTANT_ and burn out is unfortunately something that plagues many developers.
+
+_Remember_: *Persistence is the act of persevering where others would give up.*
+
+It's alright to take a break, and reflect on what you've been doing. Sometimes it's highly beneficial.
+
+This insight came from my extensive experience in Design. I've learned that if you feel like something is missing, it's best to take a break and look at things from another perspective.
+
+# 5/1/2025 - 200 OK
+☀️😎
+I took a well deserved break, and discovered something that reignited and fueled the very passion I had initially burned out from extensive failure.
+
+Have you ever heard of [Outpost Firewall Pro](https://en.wikipedia.org/wiki/Outpost_Firewall_Pro)? I hadn't until I was in a VC with some peers and this was subsequently brought to my attention!
+
+It feels like I'm not only supporting the Open-Sourced Community, but also filling the void that [Outpost Firewall Pro](https://en.wikipedia.org/wiki/Outpost_Firewall_Pro) when it was decommissioned.
+
+> Not to mention this application doesn't require a subscription. No Licenses to Bypass and No Reveng Needed for Total Control!
+
+I really hope this project grows to help others, regardless of their technical experience.
+
+# 5/2/2025 - Redesign.
+
+Taking inspiration from [Outpost Firewall Pro](https://en.wikipedia.org/wiki/Outpost_Firewall_Pro), I've decided to inspire the dashboard from their old product, it's almost the same; but with my twists.
+
+### ⏱️ From 10:30 AM - 02:30 PM
+I worked on prototyping for redesigning and fixing multiple bugs, including but not limited to: Custom Dialog Exceptions (temporarily replaced with MessageBox.Show), and Other issues relating to the redesign.
+
+### ⏱️ From 04:30 PM - 08:30 PM
+I redesigned `Dashboard.xaml` (properly this time with stackpanels for organization)  and implemented the new design aesthetic for the Dashboard, matching the bootstrapper/loader that preceeds it.
+
+### 📝 Remember: If you do something right the first time, you won't have to do it again. (Do your research, take notes, and attempt to prepare as much as possible. It's a good practice to be prepared.)
+
+> After that, I managed to complete the First Page of the Dashboard: "My Status" (not Dynamically Linked or anything yet..)
+
+### ⏱️ From 09:45 PM - 11:30 PM
+Working on the Dev-Docs Write-Up, cleaning the clutter from my R/D session, and getting things prepared for a busy day tommorrow!
+
+### 11:30 🛌💤 Bed Time
+Looking forward to Tomorrow! I'm committed to keeping my thought process Open-Sourced. I believe it will not only serve testimony for my abilities but also empower those seeking to take on something similar.
+
+# 5/3/2025 - TBD (TOMORROW)
