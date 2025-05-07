@@ -1,6 +1,8 @@
 ### Dev Notes
 My developer notes is a journal that reflects both the process and internal reasoning of why things are the way they are in this project.
 
+This project is far from perfect, but it’s open source.. and if it helps someone build something better one day, then to me, it's been a success.
+
 # 4/26/2025 - `console.write(Hello World! 💻);`
 🌙
 On 4/26/2025 I had an epiphany, I realized that most Windows 10/11 End Users have no understanding of the Windows Firewall
@@ -167,4 +169,37 @@ Working on the Dev-Docs Write-Up, cleaning the clutter from my R/D session, and 
 ### 11:30 🛌💤 Bed Time
 Looking forward to Tomorrow! I'm committed to keeping my thought process Open-Sourced. I believe it will not only serve testimony for my abilities but also empower those seeking to take on something similar.
 
-# 5/3/2025 - TBD (TOMORROW)
+# 5/3/2025 - 5/4/2025 Mental Health Break
+It can be draining working iteratively to meet your anticipated deadlines.
+
+I honestly needed a break to reflect on my progress and to construct the continuation of my development.
+
+# 5/5/2025 University Hurdles
+I spent the morning getting everything ready to see my Pediatrician (I'm 18) and once I was there I had to obtain documents that proved my Vaccination Status.
+
+That took a moment, but secondarily while I was there It was discovered I've lost about 20 lbs since I've been out of DCS Care (Removed from my Mother due to Independent Neglect) but unfortunately I'm in a similar situation that's almost equally if not worse for my mental health.
+
+I'm doing everything I can to hold what I have left together. This project is one of those things holding me together, giving me something to look forward upon.
+
+I'm excited to continue development and to make this a product that will benefit not only myself but the countless non-technilogical users of the Windows OS.
+
+# 5/6/2025 - Medical Hoops
+Another turbulent day where I was unable to be as productive as I wanted to be. Feel Free to skip this section:
+
+My uncle had just moved into the already chaotic and unstable household.
+
+This is going to prove to be more and more concerning as time progresses. I'm hoping to be in University sooner than later to escape the neglect for medical care. and Countless other issues I have to live with on a day to day basis such as not being able to Eat as much as I need to and clean as regularly as I should.
+
+Things are without a doubt difficult for me. I'm trying everything I can to ensure stability for myself, others won't do the same for themselves and that confuses me..
+
+I spent the day going to a Same Day Clinic and obtaining an Anti-Biotic for suspected "Nail Trauma". I believe my living conditions are beginning to catch-up to me slowly. Not only impacting my asthma but beginning to degrade the rest of my body as time progresses.
+
+I'm trying everything I can to do what's best for myself.
+
+# 5/7/2025 - Today
+
+It's been a pretty chaotic day, things aren't any better and seem to be progressively getting worse. I really hope I'm accepted into university.
+
+Things at home are getting more turubulent with it becoming over crowded and a baby on the way..
+
+I will continue Development in about an hour (C. 7:30 CST) - I currently have the Home Page completed.
