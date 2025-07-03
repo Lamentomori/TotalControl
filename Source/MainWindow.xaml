@@ -1,0 +1,26 @@
+﻿<Window x:Class="TotalControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TotalControl"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="MainWindow" 
+        Height="650"
+        Width="900"
+        WindowStyle="None"
+        Topmost="True">
+    <Grid>
+        <Border Width="700" CornerRadius="35" Background="#FF171717" BorderBrush="#FFE40000" BorderThickness="2,2,2,2" Margin="100,150,100,207">
+            <Border.Effect>
+                <DropShadowEffect Color="Red" BlurRadius="50" ShadowDepth="0" Opacity="0.65" RenderingBias="Quality"/>
+            </Border.Effect>
+        </Border>
+        <Image x:Name="Logo" HorizontalAlignment="Left" Height="48" Margin="118,164,0,0" VerticalAlignment="Top" Width="174" Source="/CyberWatchLogoBannerFINAL.png"/>
+        <Label x:Name="Title" Content="Total Control" HorizontalAlignment="Center" VerticalAlignment="Top" Height="66" Width="700" Foreground="White" FontFamily="Cascadia Code" FontSize="48" Margin="0,247,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label x:Name="Status" Content="How tf do you see this" HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="700" Foreground="White" FontFamily="Cascadia Code" Margin="0,319,0,0" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+    </Grid>
+</Window>

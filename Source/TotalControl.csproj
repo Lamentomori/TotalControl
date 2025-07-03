@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>TotalControl.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="BaseLogo.png" />
+    <None Remove="image\Protected.png" />
+    <None Remove="image\Safe.png" />
+    <None Remove="image\Undetermined.png" />
+    <None Remove="image\Vulnerable.png" />
+    <None Remove="Protected.png" />
+    <None Remove="Vulnerable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BaseLogo.png" />
+    <Resource Include="CyberWatchLogoBannerFINAL.png" />
+    <PackageReference Include="FirewallManager" Version="1.0.2" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.PowerShell.5.1.ReferenceAssemblies" Version="1.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Management.Automation" Version="7.5.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\Safe.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="image\Undetermined.png" />
+    <Resource Include="image\Vulnerable.png" />
+    <Resource Include="Protected.png" />
+    <Resource Include="TotalControl.ico" />
+    <Resource Include="Vulnerable.png" />
+  </ItemGroup>
+</Project>
