@@ -85,21 +85,6 @@ namespace TotalControl
 
         }
 
-        private void ExecutePowerShell(string script)
-        {
-            using (var ps = new Process())
-            {
-                ps.StartInfo.FileName = "powershell.exe";
-                ps.StartInfo.Arguments = $"-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -Command \"{script}\"";
-                ps.StartInfo.Verb = "runas"; // ensure admin
-                ps.StartInfo.CreateNoWindow = true;
-                ps.StartInfo.UseShellExecute = true;
-                ps.Start();
-                ps.WaitForExit();
-            }
-        }
-
-
         public void EnableFirewallRules()
         {
             var result = MessageBox.Show(
@@ -117,7 +102,7 @@ namespace TotalControl
                 foreach ($profile in $profiles) {
                     Set-NetFirewallProfile -Profile $profile -DefaultOutboundAction Block -DefaultInboundAction Block
                 }";
-            ExecutePowerShell(script);
+            PowershellHelper.Run(script);
             GetFirewallStatus();
         }
         public void DisableFirewallRules()
@@ -137,7 +122,7 @@ namespace TotalControl
                 foreach ($profile in $profiles) {
                     Set-NetFirewallProfile -Profile $profile -DefaultOutboundAction Allow -DefaultInboundAction Allow
                 }";
-            ExecutePowerShell(script);
+            PowershellHelper.Run(script);
             GetFirewallStatus();
         }
         private void firewallBtn_Click(object sender, RoutedEventArgs e)
@@ -160,6 +145,18 @@ namespace TotalControl
         private void topBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void githubBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PowershellHelper.Run("start https://github.com/Lamentomori/TotalControl");
+
+        }
+
+        private void discordBtn_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PowershellHelper.Run("start https://cyberwatch.cc/invite");
+
         }
     }
 }

@@ -116,11 +116,7 @@ New-NetFirewallRule -DisplayName 'Allow DHCP' -Direction Outbound -Protocol UDP 
 New-NetFirewallRule -DisplayName 'Allow DNS' -Direction Outbound -Protocol UDP -RemotePort 53 -Action Allow
 ";
 
-            using (System.Management.Automation.PowerShell ps = System.Management.Automation.PowerShell.Create())
-            {
-                ps.AddScript(script);
-                ps.Invoke();
-            }
+            PowershellHelper.Run(script);
 
 
             // Whitelist Essential Services but leave no holes..

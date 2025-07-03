@@ -168,23 +168,31 @@
         <Border Height="450" Background="#FF171717" BorderBrush="#FF484848" BorderThickness="2,2,2,2" CornerRadius="5" Margin="100,100,770,100"/>
         <StackPanel Margin="-665,165,0,0" Height="500">
             <Button Style="{DynamicResource BtnLeft}" Content="Home" Width="170" Height="47" Margin="0, 3, 6, 0" RenderTransformOrigin="0.448,0.54" FontFamily="Cascadia Code SemiBold" FontSize="18" Background="#FFB5B5B5" BorderBrush="#FF5F5F5F"/>
+            <Button Style="{DynamicResource BtnLeft}" Content="Manage Rules" Width="170" Height="47" Margin="0, 3, 6, 0" RenderTransformOrigin="0.448,0.54" FontFamily="Cascadia Code SemiBold" FontSize="18" Background="#FFB5B5B5" BorderBrush="#FF5F5F5F"/>
+            <Button Style="{DynamicResource BtnLeft}" Content="Settings" Width="170" Height="47" Margin="0, 3, 6, 0" RenderTransformOrigin="0.448,0.54" FontFamily="Cascadia Code SemiBold" FontSize="18" Background="#FFB5B5B5" BorderBrush="#FF5F5F5F"/>
         </StackPanel>
         <Border x:Name="topBar" Background="#FF171717" BorderBrush="#FF484848" BorderThickness="2,2,2,2" CornerRadius="5" Margin="100,100,100,486" MouseDown="topBar_MouseDown"/>
         <Label x:Name="Title" Content="Total Control" HorizontalAlignment="Center" VerticalAlignment="Top" Height="52" Width="184" Foreground="White" FontFamily="Cascadia Code" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,106,0,0"/>
         <Label Style="{DynamicResource redHighlight}" x:Name="exitBtn" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="46" FontFamily="Cascadia Code" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="901,106,0,0" MouseDown="exitBtn_MouseDown"/>
         <Label Style="{DynamicResource redHighlight}" x:Name="minimizeBtn" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="46" FontFamily="Cascadia Code" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="855,106,0,0" MouseDown="minimizeBtn_MouseDown"/>
-        <Label Style="{DynamicResource redHighlight}" x:Name="githubBtn" Content="Github" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="90" FontFamily="Cascadia Code" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="101,497,0,0"/>
-        <Label Style="{DynamicResource redHighlight}"  x:Name="discordBtn" Content="Discord" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="90" FontFamily="Cascadia Code" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="191,497,0,0"/>
+        <Label Style="{DynamicResource redHighlight}" x:Name="githubBtn" Content="Github" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="90" FontFamily="Cascadia Code" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="101,497,0,0" MouseDown="githubBtn_MouseDown"/>
+        <Label Style="{DynamicResource redHighlight}"  x:Name="discordBtn" Content="Discord" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="90" FontFamily="Cascadia Code" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="191,497,0,0" MouseDown="discordBtn_MouseDown"/>
         <StackPanel Margin="281,163,103,0" Height="383" VerticalAlignment="Top"/>
         <Label Style="{DynamicResource redHighlight}" x:Name="supportBtn" Content="Support" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="92" FontFamily="Cascadia Code" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="855,502,0,0" RenderTransformOrigin="0.522,0.721"/>
         <Label x:Name="pageTitle" Content="pageName" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="92" Foreground="White" FontFamily="Cascadia Code" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="285,169,0,0"/>
         <Label x:Name="Seperator" Content="●" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="90" Foreground="Red" FontFamily="Cascadia Code" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="145,497,0,0" FontSize="8"/>
-        <StackPanel Margin="280,164,0,149" Background="#FF1B1B1B" HorizontalAlignment="Left" Width="667">
+        <StackPanel Margin="280,164,0,148" Background="#FF1B1B1B" HorizontalAlignment="Left" Width="667">
             <Grid Height="145" Width="664">
                 <Image x:Name="Logo" Source="/image/Undetermined.png" Margin="-4,3,534,46" RenderTransformOrigin="0.486,0.403"/>
                 <Label x:Name="Status" Content="Status: Undetermined" Foreground="White" FontFamily="Cascadia Code" FontSize="24" Width="293" Height="43" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="116,18,0,0"/>
                 <Label x:Name="Details" Content="Please Contact Support." Foreground="White" FontFamily="Cascadia Code" FontSize="14" Width="390" Height="43" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,66,0,0"/>
                 <Button x:Name="firewallBtn" Style="{DynamicResource ButtonStyle1}" Content="Diagnose" Margin="468,96,6,4" Background="White" Click="firewallBtn_Click"/>
+
+                <StackPanel Margin="0,200,0,-194">
+                    <Border Height="95" Width="656" CornerRadius="15,15,15,15" BorderBrush="#FF6D6D6D" BorderThickness="2,2,2,2"/>
+                    <Label Content="👋 Need to whitelist an Application, Port or IP Address?" Margin="20, -85, 250, 50" Foreground="White" FontFamily="Cascadia Code"/>
+                    <Label Content="Navigate to Manage Rules and Configure your rules!" Margin="275, -35, 0, 50" Foreground="White" FontFamily="Cascadia Code"/>
+                </StackPanel>
             </Grid>
         </StackPanel>
 
