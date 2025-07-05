@@ -158,6 +158,94 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="FocusVisual2">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="OptionMarkFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="14,0,0,0" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFF3F9FF"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF5593FF"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFD9ECFF"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF3C77DD"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FFE6E6E6"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FFBCBCBC"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070"/>
+        <Style x:Key="RoundedCheckBox" TargetType="{x:Type CheckBox}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual2}"/>
+            <Setter Property="Background" Value="{StaticResource OptionMark.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource OptionMark.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border x:Name="checkBoxBorder" CornerRadius="2" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                <Grid x:Name="markGrid">
+                                    <Path x:Name="optionMark" Data="F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z " Fill="{StaticResource OptionMark.Static.Glyph}" Margin="1" Opacity="0" Stretch="None"/>
+                                    <Rectangle x:Name="indeterminateMark" Fill="{StaticResource OptionMark.Static.Glyph}" Margin="2" Opacity="0"/>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasContent" Value="true">
+                                <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+                                <Setter Property="Padding" Value="4,-1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.MouseOver.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="1"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="0"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="{x:Null}">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Border Height="450" Width="850" Background="#FF171717" BorderBrush="#FF484848" BorderThickness="2,2,2,2" CornerRadius="5">
@@ -167,9 +255,9 @@
         </Border>
         <Border Height="450" Background="#FF171717" BorderBrush="#FF484848" BorderThickness="2,2,2,2" CornerRadius="5" Margin="100,100,770,100"/>
         <StackPanel Margin="-665,165,0,0" Height="500">
-            <Button Style="{DynamicResource BtnLeft}" Content="Home" Width="170" Height="47" Margin="0, 3, 6, 0" RenderTransformOrigin="0.448,0.54" FontFamily="Cascadia Code SemiBold" FontSize="18" Background="#FFB5B5B5" BorderBrush="#FF5F5F5F"/>
-            <Button Style="{DynamicResource BtnLeft}" Content="Manage Rules" Width="170" Height="47" Margin="0, 3, 6, 0" RenderTransformOrigin="0.448,0.54" FontFamily="Cascadia Code SemiBold" FontSize="18" Background="#FFB5B5B5" BorderBrush="#FF5F5F5F"/>
-            <Button Style="{DynamicResource BtnLeft}" Content="Settings" Width="170" Height="47" Margin="0, 3, 6, 0" RenderTransformOrigin="0.448,0.54" FontFamily="Cascadia Code SemiBold" FontSize="18" Background="#FFB5B5B5" BorderBrush="#FF5F5F5F"/>
+            <Button x:Name="homeBTN" Style="{DynamicResource BtnLeft}" Content="Home" Width="170" Height="47" Margin="0, 3, 6, 0" RenderTransformOrigin="0.448,0.54" FontFamily="Cascadia Code SemiBold" FontSize="18" Background="#FFB5B5B5" BorderBrush="#FF5F5F5F" Click="homeBTN_Click"/>
+            <Button x:Name="manageRulesBTN" Style="{DynamicResource BtnLeft}" Content="Manage Rules" Width="170" Height="47" Margin="0, 3, 6, 0" RenderTransformOrigin="0.448,0.54" FontFamily="Cascadia Code SemiBold" FontSize="18" Background="#FFB5B5B5" BorderBrush="#FF5F5F5F" Click="manageRulesBTN_Click"/>
+            <Button x:Name="settingsBTN" Style="{DynamicResource BtnLeft}" Content="Settings" Width="170" Height="47" Margin="0, 3, 6, 0" RenderTransformOrigin="0.448,0.54" FontFamily="Cascadia Code SemiBold" FontSize="18" Background="#FFB5B5B5" BorderBrush="#FF5F5F5F" Click="settingsBTN_Click"/>
         </StackPanel>
         <Border x:Name="topBar" Background="#FF171717" BorderBrush="#FF484848" BorderThickness="2,2,2,2" CornerRadius="5" Margin="100,100,100,486" MouseDown="topBar_MouseDown"/>
         <Label x:Name="Title" Content="Total Control" HorizontalAlignment="Center" VerticalAlignment="Top" Height="52" Width="184" Foreground="White" FontFamily="Cascadia Code" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,106,0,0"/>
@@ -177,25 +265,79 @@
         <Label Style="{DynamicResource redHighlight}" x:Name="minimizeBtn" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="46" FontFamily="Cascadia Code" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="855,106,0,0" MouseDown="minimizeBtn_MouseDown"/>
         <Label Style="{DynamicResource redHighlight}" x:Name="githubBtn" Content="Github" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="90" FontFamily="Cascadia Code" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="101,497,0,0" MouseDown="githubBtn_MouseDown"/>
         <Label Style="{DynamicResource redHighlight}"  x:Name="discordBtn" Content="Discord" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="90" FontFamily="Cascadia Code" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="191,497,0,0" MouseDown="discordBtn_MouseDown"/>
-        <StackPanel Margin="281,163,103,0" Height="383" VerticalAlignment="Top"/>
+        <Label x:Name="Seperator" Content="●" Visibility="Visible" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="90" Foreground="Red" FontFamily="Cascadia Code" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="145,497,0,0" FontSize="8"/>
         <Label Style="{DynamicResource redHighlight}" x:Name="supportBtn" Content="Support" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="92" FontFamily="Cascadia Code" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="855,502,0,0" RenderTransformOrigin="0.522,0.721"/>
-        <Label x:Name="pageTitle" Content="pageName" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="92" Foreground="White" FontFamily="Cascadia Code" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="285,169,0,0"/>
-        <Label x:Name="Seperator" Content="●" HorizontalAlignment="Left" VerticalAlignment="Top" Height="52" Width="90" Foreground="Red" FontFamily="Cascadia Code" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="145,497,0,0" FontSize="8"/>
-        <StackPanel Margin="280,164,0,148" Background="#FF1B1B1B" HorizontalAlignment="Left" Width="667">
-            <Grid Height="145" Width="664">
-                <Image x:Name="Logo" Source="/image/Undetermined.png" Margin="-4,3,534,46" RenderTransformOrigin="0.486,0.403"/>
-                <Label x:Name="Status" Content="Status: Undetermined" Foreground="White" FontFamily="Cascadia Code" FontSize="24" Width="293" Height="43" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="116,18,0,0"/>
-                <Label x:Name="Details" Content="Please Contact Support." Foreground="White" FontFamily="Cascadia Code" FontSize="14" Width="390" Height="43" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,66,0,0"/>
-                <Button x:Name="firewallBtn" Style="{DynamicResource ButtonStyle1}" Content="Diagnose" Margin="468,96,6,4" Background="White" Click="firewallBtn_Click"/>
+        <StackPanel x:Name="Home" Margin="281,163,103,0" Height="383" VerticalAlignment="Top" Visibility="Hidden">
+            <StackPanel Margin="0,0,0,148" Background="#FF1B1B1B" HorizontalAlignment="Left" Width="667" Height="318">
+                <Grid Height="145" Width="664">
+                    <Image x:Name="Logo" Source="/image/Undetermined.png" Margin="-4,3,534,46" RenderTransformOrigin="0.486,0.403"/>
+                    <Label x:Name="Status" Content="Status: Undetermined" Foreground="White" FontFamily="Cascadia Code" FontSize="24" Width="293" Height="43" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="116,18,0,0"/>
+                    <Label x:Name="Details" Content="Please Contact Support." Foreground="White" FontFamily="Cascadia Code" FontSize="14" Width="390" Height="43" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="118,66,0,0"/>
+                    <Button x:Name="firewallBtn" Style="{DynamicResource ButtonStyle1}" Content="Diagnose" Margin="468,96,6,4" Background="White" Click="firewallBtn_Click"/>
 
-                <StackPanel Margin="0,200,0,-194">
-                    <Border Height="95" Width="656" CornerRadius="15,15,15,15" BorderBrush="#FF6D6D6D" BorderThickness="2,2,2,2"/>
-                    <Label Content="👋 Need to whitelist an Application, Port or IP Address?" Margin="20, -85, 250, 50" Foreground="White" FontFamily="Cascadia Code"/>
-                    <Label Content="Navigate to Manage Rules and Configure your rules!" Margin="275, -35, 0, 50" Foreground="White" FontFamily="Cascadia Code"/>
+                    <StackPanel Margin="0,200,0,-171">
+                        <Border Height="95" Width="656" CornerRadius="15,15,15,15" BorderBrush="#FF6D6D6D" BorderThickness="2,2,2,2"/>
+                        <Label Content="👋 Need to whitelist an Application, Port or IP Address?" Margin="20, -85, 250, 50" Foreground="White" FontFamily="Cascadia Code" Width="410"/>
+                        <Label Content="Navigate to Manage Rules and Configure your rules!" Margin="275, -35, 0, 50" Foreground="White" FontFamily="Cascadia Code"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="manageRules" Margin="281,163,103,0" Height="383" VerticalAlignment="Top" Visibility="Hidden" Background="#FF1E1E1E">
+            <Label Content="🛡️ Manage Total Control Rules" Foreground="White" FontFamily="Cascadia Code" FontSize="20" Margin="10"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Height="125" Background="#1E1E1E">
+                <ItemsControl x:Name="RuleList">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel Margin="4" Background="#222" Height="40" LastChildFill="False">
+                                <Label 
+                        Content="{Binding}" 
+                        Foreground="White" 
+                        FontFamily="Cascadia Code" 
+                        VerticalAlignment="Center" 
+                        Margin="10,0,0,0" 
+                        Width="400"/>
+
+                                <Button Content="Remove" Width="75" Height="25" Margin="10,0,5,0" Click="RemoveRule_Click" Tag="{Binding}" />
+                            </DockPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+            <Button Content="Refresh Rules" Click="RefreshRules_Click" Width="150" Height="30" Margin="10"/>
+
+            <StackPanel Width="470" Height="125" Background="#1B1B1B">
+                <Label Content="Add Rule" Foreground="White" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,8" FontFamily="Courier New"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10" >
+                    <TextBox x:Name="RuleTextBox" Width="200" Height="30" Margin="0,0,10,0" />
+                    <ComboBox x:Name="RuleTypeComboBox" Width="125" Height="30">
+                        <ComboBoxItem Content="IP" />
+                        <ComboBoxItem Content="Port" />
+                        <ComboBoxItem Content="Application" />
+                    </ComboBox>
+                    <ComboBox x:Name="ActionTypeComboBox" Width="125" Height="30" Margin="10,0,0,0">
+                        <ComboBoxItem Content="Allow" />
+                        <ComboBoxItem Content="Deny" />
+                    </ComboBox>
                 </StackPanel>
-            </Grid>
+
+                <Button x:Name="AddRuleButton" Content="Add Rule" Height="35" Background="#FFB5B5B5" Foreground="Black" FontWeight="Bold" Click="AddRuleButton_Click" />
+            </StackPanel>
+
+
+
         </StackPanel>
 
-
+        <StackPanel x:Name="Settings" Margin="281,163,103,0" Height="339" VerticalAlignment="Top" Visibility="Visible">
+            
+            <CheckBox Style="{DynamicResource RoundedCheckBox}" x:Name="allowDNSRadioBtn" Content="Allow DNS (UDP 53) HTTP (TCP 80) HTTPS (TCP 443)" Foreground="White" Margin="-153, 10, 0, 0" Width="475" FontFamily="Cascadia Mono SemiBold" FontSize="16" Checked="allowDNSRadioBtn_Checked" Unchecked="allowDNSRadioBtn_Unchecked"/>
+            <CheckBox Style="{DynamicResource RoundedCheckBox}" x:Name="allowWinStoreNmore" Content="Allow Windows Store" Foreground="White" Margin="-300, 10, 0, 0" Width="328" FontFamily="Cascadia Mono SemiBold" FontSize="16" Checked="allowWinStoreNmore_Checked" Unchecked="allowWinStoreNmore_Unchecked"/>
+            <CheckBox Style="{DynamicResource RoundedCheckBox}" Content="Enable Monitoring" Foreground="White" Margin="-300, 10, 0, 0" Width="328" FontFamily="Cascadia Mono SemiBold" FontSize="16"/>
+            <CheckBox Style="{DynamicResource RoundedCheckBox}" Content="Enable Alerts" Foreground="White" Margin="-300, 10, 0, 0" Width="328" FontFamily="Cascadia Mono SemiBold" FontSize="16"/>
+            <Button Style="{DynamicResource BtnLeft}"  Content="Clear Rules" Width="125" Height="35" Margin="150, 175, -360, 0">
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

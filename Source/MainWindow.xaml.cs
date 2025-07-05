@@ -57,8 +57,23 @@ namespace TotalControl
             }
             else
             {
+                var result = MessageBox.Show(
+                "Total Control needs to make Changes to your Firewall. \n Configuration is needed for this application to work as intended. \n Warning: You may experience the inability communicate externally unless you already have a firewall rule in place. \n Do you authorize these changes? We offer support..?",
+                "Total Control | Confirm Changes",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Warning
+            );
+
+                if (result != MessageBoxResult.Yes)
+                    Environment.Exit(0);
+
                 // Proceed with logic (e.g., configure firewall)
-            
+                await Configure();
+
+                Dashboard dashboard = new Dashboard();
+                this.Hide();
+                dashboard.Show();
+
             }
         }
 
@@ -97,7 +112,7 @@ namespace TotalControl
             Animation.FadeIn(this.Status, 5);
 
 
-            string script = @"
+            string configureFirewall = @"
 # Ensure script runs as administrator
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {
     Write-Error 'This script requires administrator privileges.'
@@ -114,9 +129,23 @@ New-NetFirewallRule -DisplayName 'Allow Loopback Outbound' -Direction Outbound -
 # Optionally allow DHCP and DNS (necessary for network function)
 New-NetFirewallRule -DisplayName 'Allow DHCP' -Direction Outbound -Protocol UDP -RemotePort 67 -Action Allow
 New-NetFirewallRule -DisplayName 'Allow DNS' -Direction Outbound -Protocol UDP -RemotePort 53 -Action Allow
+
+# Set log parameters
+$logFilePath = ""$env:SystemRoot\System32\LogFiles\Firewall\pfirewall.log""
+$logMaxSize = 500,000  # Size in KB (4MB)
+
+# Enable and configure logging for each firewall profile
+$profiles = @('Domain', 'Private', 'Public')
+foreach ($profile in $profiles) {
+    Set-NetFirewallProfile -Profile $profile `
+        -LogFileName $logFilePath `
+        -LogMaxSizeKilobytes $logMaxSize `
+        -LogAllowed True `
+        -LogBlocked True
+}
 ";
 
-            PowershellHelper.Run(script);
+            PowershellHelper.Run(configureFirewall);
 
 
             // Whitelist Essential Services but leave no holes..
